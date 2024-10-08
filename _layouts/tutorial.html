@@ -7,26 +7,28 @@ layout: default
     <div class="column is-1-desktop is-1-tablet is-hidden-mobile"></div>
 
     <div class="column is-5-desktop is-5-tablet">
-        <div class="box">
-            <figure class="image is-fullwidth">
-                <img class="has-ratio is-fullwidth" width="200" height="360" src="{{ page.image }}" />
-            </figure>
-        </div>
+        <figure class="image is-fullwidth ">
+            <img class="has-ratio is-fullwidth rounded-corners" width="200" height="360" src="{{ page.image }}" />
+        </figure>
     </div>
 
     <div class="column is-5-desktop is-5-tablet">
         <div class="panel is-primary">
             <!-- Panel heading -->
+            {% if page.title %}
             <p class="panel-heading">
                 {{ page.title }}
             </p>
+            {% endif %}
         
             <!-- Panel block for description -->
+            {% if page.description %}
             <div class="panel-block">
                 <div class="content">
                     <p class="subtitle is-6">{{ page.description }}</p>
                 </div>
             </div>
+            {% endif %}
         
             <!-- Panel block for time -->
             {% if page.time %}

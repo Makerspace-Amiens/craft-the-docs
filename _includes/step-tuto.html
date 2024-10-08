@@ -10,8 +10,8 @@
         <h3>{{ include.title }}</h3>
     {% endif %}
 </div>
-<div class="columns {% if include.greyBackground %} has-background-white-ter {% endif %}">
-    <div class="column is-4">
+<div class="columns rounded-large-corners {% if include.greyBackground %} has-background-white-ter {% endif %}">
+    <div class="column is-4 mb-4">
         {% if include.image %}
             {% include image_modal.html image=include.image %}
         <div class="columns is-mobile">

@@ -3,7 +3,7 @@
 <div class="image-modal-container">
     <!-- Image cliquable pour ouvrir la modale -->
     <a href="javascript:void(0);" onclick="document.getElementById('modal-{{ image_id }}').classList.add('is-active')">
-        <img src="{{ include.image }}" alt="{{ include.alt | default: 'Image' }}" title="{{ include.title | default: 'Cliquez pour agrandir' }}" />
+        <img class="rounded-corners" src="{{ include.image }}" alt="{{ include.alt | default: 'Image' }}" title="{{ include.title | default: 'Cliquez pour agrandir' }}" />
     </a>
 
     <!-- Modale Bulma -->

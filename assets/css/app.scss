@@ -23,9 +23,9 @@ $footer-padding: 2rem 1.5rem 2rem;
     margin: 2rem 0;
     position: relative;
     text-align: center;
-    font-weight: bold; /* Ajout de texte en gras */
+    font-weight: bold; 
     
-    /* Contenu aligné à droite */
+
     &.is-right a {
         position: absolute;
         right: 0;
@@ -36,3 +36,12 @@ $footer-padding: 2rem 1.5rem 2rem;
         font-weight: bold;
     }
 }
+
+.rounded-corners {
+    border-radius: 0.75rem;
+}
+
+.rounded-large-corners {
+    border-radius: 1.00rem;
+}
+
