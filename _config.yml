@@ -10,3 +10,10 @@ footer_menu: footer_navigation
 lang: fr
 theme_color: '#ef2e31'
 fixed_navbar: top
+
+collections:
+  tutorials: 
+    output: true
+    layout: tutorial
+    image: https://via.placeholder.com/800x600
+    show_sidebar: false
