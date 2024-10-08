@@ -14,6 +14,11 @@ fixed_navbar: top
 collections:
   tutorials: 
     output: true
-    layout: tutorial
+    layout: documentation
+    image: https://via.placeholder.com/800x600
+    show_sidebar: false
+  machines: 
+    output: true
+    layout: documentation
     image: https://via.placeholder.com/800x600
     show_sidebar: false

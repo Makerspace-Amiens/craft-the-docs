@@ -1,7 +1,9 @@
-- name: Page Name
-  link: /page-1/
+- name: Informations
+  link: /pages/informations/
 - name: Blog
   link: /blog/
+- name: Tutoriels
+  link: 
   dropdown: 
-    - name: Page 2
-      link: /page-2/
+    - name: Impression 3D
+      link: /pages/tutorials-collection

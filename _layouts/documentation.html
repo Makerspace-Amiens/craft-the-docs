@@ -1,0 +1,156 @@
+---
+layout: default
+---
+
+<div class="columns is-multiline">
+    
+    {% if page.doc_header==true %}
+        <div class="column is-1-desktop is-1-tablet is-hidden-mobile"></div>
+
+        <div class="column is-5-desktop is-5-tablet">
+            <figure class="image is-fullwidth ">
+                <img class="has-ratio is-fullwidth rounded-corners" src="{{ page.image }}" />
+            </figure>
+        </div>
+
+        <div class="column is-5-desktop is-5-tablet">
+            <div class="panel is-primary">
+                <!-- Panel heading -->
+                {% if page.title %}
+                <p class="panel-heading">
+                    {{ page.title }}
+                </p>
+                {% endif %}
+            
+                <!-- Panel block for description -->
+                {% if page.description %}
+                <div class="panel-block">
+                    <div class="content">
+                        <p class="subtitle is-6">{{ page.description }}</p>
+                    </div>
+                </div>
+                {% endif %}
+            
+                <!-- Panel block for time -->
+                {% if page.time %}
+                    <div class="panel-block">
+                        {% include rating.html
+                            title="Durée"
+                            rating=page.time 
+                            icon="fa-clock"
+                            align="has-text-left"
+                        %}
+                    </div>
+                {% endif %}
+            
+                <!-- Panel block for difficulty -->
+                {% if page.difficulty %}
+                    <div class="panel-block">
+                        {% include rating.html
+                            title="Difficulté" 
+                            rating=page.difficulty 
+                            icon="fa-star"
+                            align="has-text-left"
+                        %}
+                    </div>
+                {% endif %}
+            
+                <!-- Panel block for compatibilities -->
+                <div class="panel-block">
+                    <div class="content has-text-left is-flex align-items-center">
+                        <!-- Texte Compatibilité avec icônes alignées sur la même ligne -->
+                        <p class="is-size-6 has-text-weight-semibold mr-2">Compatibilité :</p>
+                        {% if page.compatibilities-os contains 'win' %}
+                            <span class="icon mr-1"><i class="fab fa-windows"></i></span>
+                        {% endif %}
+                        {% if page.compatibilities-os contains 'mac' %}
+                            <span class="icon mr-1"><i class="fab fa-apple"></i></span>
+                        {% endif %}
+                        {% if page.compatibilities-os contains 'lin' %}
+                            <span class="icon mr-1"><i class="fab fa-linux"></i></span>
+                        {% endif %}
+                    </div>
+                </div>
+                
+            
+                <!-- Panel block for prerequisites -->
+                {% if page.prerequisites %}
+                    <div class="panel-block">
+                        <div class="content">
+                            <p class="is-size-6 has-text-weight-semibold mb-0">Pré-requis :</p>
+                            <ul class="mt-1">
+                                {% for prerequisite in page.prerequisites %}
+                                    {% if prerequisite.link %}
+                                        <li><a href="{{ prerequisite.link }}" target="_blank">{{ prerequisite.label }}</a></li>
+                                    {% else %}
+                                        <li>{{ prerequisite.label }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            
+                <!-- Panel block for softwares -->
+                {% if page.softwares %}
+                    <div class="panel-block">
+                        <div class="content">
+                            <p class="is-size-6 has-text-weight-semibold mb-0">Logiciels :</p>
+                            <ul class="mt-1">
+                                {% for software in page.softwares %}
+                                    {% if software.link %}
+                                        <li><a href="{{ software.link }}" target="_blank">{{ software.label }}</a></li>
+                                    {% else %}
+                                        <li>{{ software.label }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            
+                <!-- Panel block for progress bar (documentation completion) -->
+                {% if page.todo %}
+                    <div class="panel-block">
+                        <div class="content">
+                            <p class="is-size-6 has-text-weight-semibold mb-1">Documentation réalisée à {{ page.todo }}%</p>
+                            {% if page.todo <= 25 %}
+                                <progress class="progress is-danger is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
+                            {% elsif page.todo <= 85 %}
+                                <progress class="progress is-warning is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
+                            {% else %}
+                                <progress class="progress is-success is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="column is-1-desktop is-1-tablet is-hidden-mobile"></div>
+    {% endif %}
+
+    <div class="columns is-multiline mt-6">
+
+        <div class="column is-1-desktop is-1-tablet is-hidden-mobile"></div>
+
+        {% if page.component_toc %}
+        <div class="column is-8-desktop is-8-tablet">
+        {% else %}
+        <div class="column is-10-desktop is-8-tablet">
+        {% endif %}
+            <div class="content">
+                {{ content }}
+            </div>
+        </div>
+
+        {% if page.component_toc %}
+            <div class="column is-3-desktop is-3-tablet is-hidden-mobile mt-6" style="height:90vh; position: sticky; top: 3.2rem; overflow: auto;">
+                {% assign contentsTitle = page.toc_title | default: 'Contents' %}
+                {% include toc.html html=content class='menu-list' h_min=2 h_max=4 contents_title=contentsTitle %}
+            </div>
+        {% else %}
+            <div class="column is-1-desktop is-1-tablet"></div>
+        {% endif %}
+    </div>
+</div>

@@ -1,16 +1,16 @@
 ---
-layout: tutorial
-image: IMG_20241001_141743.jpg
+layout: documentation
 hide_hero: false
 hero_image: IMG_20241001_141743.jpg
 hero_darken: true
+image: IMG_20241001_141743.jpg
 component_toc: true
-background_color: '#f7f4ed'
-
-title: Rechargerles bobines au MakerSpace
-subtitle: Rcharger les bobines du MakerSpace par du filament 3D ROSA - refill 
-description: Cette page détaille comment recharger les bobines du MakerSpace par du filament 3D ROSA
+doc_header: true
 type: 3d-print
+
+title: Recharger les bobines au MakerSpace
+subtitle: Recharger les bobines du MakerSpace par du filament 3D ROSA - refill 
+description: Cette page détaille comment recharger les bobines du MakerSpace par du filament 3D ROSA
 
 time: 1
 difficulty: 1
