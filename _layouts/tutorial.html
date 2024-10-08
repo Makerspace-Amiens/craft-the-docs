@@ -15,91 +15,116 @@ layout: default
     </div>
 
     <div class="column is-5-desktop is-5-tablet">
-        <div class="box">
-            <p class="title is-3">{{ page.title }}</p>
-
-            <div class="content">
-                <p class="subtitle is-6"><span>{{ page.description }}</span></p>
+        <div class="panel is-primary">
+            <!-- Panel heading -->
+            <p class="panel-heading">
+                {{ page.title }}
+            </p>
+        
+            <!-- Panel block for description -->
+            <div class="panel-block">
+                <div class="content">
+                    <p class="subtitle is-6">{{ page.description }}</p>
+                </div>
             </div>
-
+        
+            <!-- Panel block for time -->
             {% if page.time %}
-                {% include rating.html
-                    title="Durée"
-                    rating=page.time 
-                    icon="fa-clock"
-                    align="has-text-left"
-                %}
+                <div class="panel-block">
+                    {% include rating.html
+                        title="Durée"
+                        rating=page.time 
+                        icon="fa-clock"
+                        align="has-text-left"
+                    %}
+                </div>
             {% endif %}
-
+        
+            <!-- Panel block for difficulty -->
             {% if page.difficulty %}
-                {% include rating.html
-                    title="Difficulté" 
-                    rating=page.difficulty 
-                    icon="fa-star"
-                    align="has-text-left"
-                %}
+                <div class="panel-block">
+                    {% include rating.html
+                        title="Difficulté" 
+                        rating=page.difficulty 
+                        icon="fa-star"
+                        align="has-text-left"
+                    %}
+                </div>
             {% endif %}
-
-            <div class="content has-text-left ">
-                <span class="is-size-6 has-text-weight-semibold"> Compatibilité : </span>
+        
+            <!-- Panel block for compatibilities -->
+            <div class="panel-block">
+                <div class="content has-text-left is-flex align-items-center">
+                    <!-- Texte Compatibilité avec icônes alignées sur la même ligne -->
+                    <p class="is-size-6 has-text-weight-semibold mr-2">Compatibilité :</p>
                     {% if page.compatibilities-os contains 'win' %}
-                    <span class="icon"><i class="fab fa-windows"></i></span>
+                        <span class="icon mr-1"><i class="fab fa-windows"></i></span>
                     {% endif %}
                     {% if page.compatibilities-os contains 'mac' %}
-                    <span class="icon"><i class="fab fa-apple"></i></span>
+                        <span class="icon mr-1"><i class="fab fa-apple"></i></span>
                     {% endif %}
                     {% if page.compatibilities-os contains 'lin' %}
-                    <span class="icon"><i class="fab fa-linux"></i></span>
+                        <span class="icon mr-1"><i class="fab fa-linux"></i></span>
                     {% endif %}
+                </div>
             </div>
-
+            
+        
+            <!-- Panel block for prerequisites -->
             {% if page.prerequisites %}
-            <div class="content mb-1">
-                <p class="is-size-6 has-text-weight-semibold mb-0">Pré-requis :</p>
-                <ul class="mt-1">
-                    {% for prerequisite in page.prerequisites %}
-                        {% if prerequisite.link %}
-                            <li><a href="{{ prerequisite.link }}" target="_blank">{{ prerequisite.label }}</a></li>
-                        {% else %}
-                            <li>{{ prerequisite.label }}</li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
+                <div class="panel-block">
+                    <div class="content">
+                        <p class="is-size-6 has-text-weight-semibold mb-0">Pré-requis :</p>
+                        <ul class="mt-1">
+                            {% for prerequisite in page.prerequisites %}
+                                {% if prerequisite.link %}
+                                    <li><a href="{{ prerequisite.link }}" target="_blank">{{ prerequisite.label }}</a></li>
+                                {% else %}
+                                    <li>{{ prerequisite.label }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             {% endif %}
-
-
+        
+            <!-- Panel block for softwares -->
             {% if page.softwares %}
-            <div class="content mb-1">
-                <p class="is-size-6 has-text-weight-semibold mb-0">Logiciels :</p>
-                <ul class="mt-1">
-                    {% for software in page.softwares %}
-                        {% if software.link %}
-                            <li><a href="{{ software.link }}" target="_blank">{{ software.label }}</a></li>
-                        {% else %}
-                            <li>{{ software.label }}</li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
+                <div class="panel-block">
+                    <div class="content">
+                        <p class="is-size-6 has-text-weight-semibold mb-0">Logiciels :</p>
+                        <ul class="mt-1">
+                            {% for software in page.softwares %}
+                                {% if software.link %}
+                                    <li><a href="{{ software.link }}" target="_blank">{{ software.label }}</a></li>
+                                {% else %}
+                                    <li>{{ software.label }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             {% endif %}
-
-
+        
+            <!-- Panel block for progress bar (documentation completion) -->
             {% if page.todo %}
-            <div class="content">
-                <p class="is-size-6 has-text-weight-semibold mb-1">Documentation réalisée à {{ page.todo }}% </p>
-                {% if page.todo <= 25 %}
-                <p><progress class="progress is-danger is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress></p>
-                {% elsif page.todo <=85 %}
-                <p><progress class="progress is-warning is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress></p>
-                {% else %}
-                <p><progress class="progress is-success is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress></p>
-                {% endif %}
-            </div>
+                <div class="panel-block">
+                    <div class="content">
+                        <p class="is-size-6 has-text-weight-semibold mb-1">Documentation réalisée à {{ page.todo }}%</p>
+                        {% if page.todo <= 25 %}
+                            <progress class="progress is-danger is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
+                        {% elsif page.todo <= 85 %}
+                            <progress class="progress is-warning is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
+                        {% else %}
+                            <progress class="progress is-success is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
+                        {% endif %}
+                    </div>
+                </div>
             {% endif %}
         </div>
-    
+        
         <div class="column is-1-desktop is-1-tablet is-hidden-mobile"></div>
+        
     </div>
 
 
