@@ -135,3 +135,10 @@ content="Bravo ! Vous avez changé la bobine ! Il vous reste maintenant à vous 
 image="IMG_20241001_141814.jpg" %}
 
 ---
+
+{%
+  include card_collections.html
+  title="5. Pour aller plus loin"
+  description="Trouvez d'autres tutoriels en lien avec l'impression 3D"
+  type="3d-print"
+%}

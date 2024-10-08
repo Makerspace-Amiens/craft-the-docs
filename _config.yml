@@ -12,13 +12,9 @@ theme_color: '#ef2e31'
 fixed_navbar: top
 
 collections:
-  tutorials: 
+  docs:
     output: true
     layout: documentation
     image: https://via.placeholder.com/800x600
     show_sidebar: false
-  machines: 
-    output: true
-    layout: documentation
-    image: https://via.placeholder.com/800x600
-    show_sidebar: false
+
