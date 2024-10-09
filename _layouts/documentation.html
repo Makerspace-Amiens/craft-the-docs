@@ -43,20 +43,23 @@ layout: default
 
                 <!-- Panel block for materials -->
                 {% if page.materials %}
-                <a class="panel-block">
-                    <span class="panel-icon">
-                      <i class="fas fa-stream" aria-hidden="true"></i>
-                    </span>
-                    Matériaux :
-                    <div class="tags">
+                <div class="panel-block">
+                <span class="panel-icon">
+                    <i class="fas fa-stream" aria-hidden="true"></i>
+                </span>
+                <span>
+                    Matériaux : 
+                </span>
+                <span class="tags ml-3">
                     {% for material in page.materials %}
-                        <span class="tag is-info">
-                            <a href="{{ material.link }}">{{ material.name }}</a>
-                        </span>
+                    <a href="{{ material.link }}" class="tag is-info has-text-white">
+                        {{ material.name }}
+                    </a>
                     {% endfor %}
-                    </div>
-                </a>
+                </span>
+                </div>
                 {% endif %}
+
             
                 <!-- Panel block for time -->
                 {% if page.time %}
