@@ -8,9 +8,17 @@ component_toc: true
 doc_header: true
 type: machine
 
-title: Ultimaker 2, 2+ et 3
+title: Ultimaker 2+ et extended
 subtitle: Imprimante FDM Ultimaker
 description: Imprimante FDM Ultimaker
+
+working-area: 200x200x200mm
+materials:
+  - name: PLA
+    link: "https://example.com/pla"
+  - name: PETG
+    link: "https://example.com/petg"
+
 
 todo: 10
 ---
