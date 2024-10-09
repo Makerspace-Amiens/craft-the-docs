@@ -18,7 +18,8 @@ materials:
     link: "https://example.com/pla"
   - name: PETG
     link: "https://example.com/petg"
-
+precision: Buse 0.4mm - Z 0.15mm
+speed: 4
 
 todo: 10
 ---

@@ -37,7 +37,7 @@ layout: default
                     <span class="panel-icon">
                       <i class="fas fa-ruler-combined" aria-hidden="true"></i>
                     </span>
-                    Zone de travail : {{ page.working-area }}
+                    <b>Zone de travail :&nbsp;</b>{{ page.working-area }}
                   </a>
                 {% endif %}
 
@@ -48,7 +48,7 @@ layout: default
                     <i class="fas fa-stream" aria-hidden="true"></i>
                 </span>
                 <span>
-                    Matériaux : 
+                    <b>Matériaux : </b>
                 </span>
                 <span class="tags ml-3">
                     {% for material in page.materials %}
@@ -58,6 +58,31 @@ layout: default
                     {% endfor %}
                 </span>
                 </div>
+                {% endif %}
+
+                <!-- Panel block for precision -->
+                {% if page.precision %}
+                <a class="panel-block">
+                    <span class="panel-icon">
+                      <i class="fas fa-crosshairs" aria-hidden="true"></i>
+                    </span>
+                    <b>Précision :&nbsp;</b> {{ page.precision }}
+                  </a>
+                {% endif %}
+
+                <!-- Panel block for speed -->
+                {% if page.speed %}
+                    <div class="panel-block" title="Plus l'indice est élévé, plus la production est lente.">
+                        <span class="panel-icon">
+                            <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+                        </span>
+                        {% include rating.html
+                            title="Temps de production"
+                            rating=page.speed 
+                            icon="fa-clock"
+                            align="has-text-left"
+                        %}
+                    </div>
                 {% endif %}
 
             
@@ -144,16 +169,16 @@ layout: default
                 <!-- Panel block for progress bar (documentation completion) -->
                 {% if page.todo %}
                     <div class="panel-block">
-                        <div class="content">
-                            <p class="is-size-6 has-text-weight-semibold mb-1">Documentation réalisée à {{ page.todo }}%</p>
+                        <span class="is-size-6 has-text-weight-semibold mb-1">
+                            Documentation réalisée à {{ page.todo }}%
+                        </span>
                             {% if page.todo <= 25 %}
-                                <progress class="progress is-danger is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
+                                <progress class="progress is-danger is-medium" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
                             {% elsif page.todo <= 85 %}
-                                <progress class="progress is-warning is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
+                                <progress class="progress is-warning is-medium" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
                             {% else %}
-                                <progress class="progress is-success is-medium mt-2" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
+                                <progress class="progress is-success is-medium" value="{{ page.todo }}" max="100">{{ page.todo }}</progress>
                             {% endif %}
-                        </div>
                     </div>
                 {% endif %}
             </div>
