@@ -11,15 +11,26 @@ type: machine
 title: Ultimaker 2+ et extended
 subtitle: Imprimante FDM Ultimaker
 description: Imprimante FDM Ultimaker
+manufacturer:
+  - name: Ultimaker
+    link: "https://ultimaker.com/fr/"
 
-working-area: 200x200x200mm
+working_area: 200x200x200mm
 materials:
   - name: PLA
     link: "https://example.com/pla"
   - name: PETG
     link: "https://example.com/petg"
+file_extensions:
+  - name: STL
+    link: "https://example.com/pla"
+  - name: 3MF
+    link: "https://example.com/petg"
+  - name: OBJ
+    link: "https://example.com/petg"
 precision: Buse 0.4mm - Z 0.15mm
 speed: 4
+access_level: 0
 
 todo: 10
 ---
