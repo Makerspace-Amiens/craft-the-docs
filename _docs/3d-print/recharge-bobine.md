@@ -11,6 +11,7 @@ type: 3d-print
 title: Recharger les bobines au MakerSpace
 subtitle: Recharger les bobines du MakerSpace par du filament 3D ROSA - refill 
 description: Cette page détaille comment recharger les bobines du MakerSpace par du filament 3D ROSA
+author: Adrien Bracq
 
 time: 1
 difficulty: 1
