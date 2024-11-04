@@ -1,12 +1,10 @@
 - name: Informations
-  link: /pages/informations/
+  link: /informations/
 - name: Blog
   link: /blog/
-- name: Machines
-  link: /pages/machines
 - name: Tutoriels
   link: 
   dropdown: 
-    - name: Impression 3D
-      link: /pages/3d-print-tutorials
+    - name: Tutoriels
+      link: /tutorials/
     
