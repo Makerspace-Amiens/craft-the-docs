@@ -10,6 +10,9 @@ theme_color: '#ef2e31'
 fixed_navbar: top
 favicon: favicon.png
 
+paginate: 5
+paginate_path: "/blog/page:num"
+
 collections:
   docs:
     output: true
