@@ -73,6 +73,31 @@ Vous pouvez également ajouter des sections de contenu personnalisées pour des 
 
 ---
 
+## 2. Images en ligne
+
+Vous avez la possibilité d'intégrer des images en ligne. Possible jusqu'à 4 images au choix.
+
+{% include image-row.html 
+image_1 = "placeholder.png" 
+image_2 = "placeholder.png"
+%}
+
+{% include image-row.html 
+image_1 = "placeholder.png" 
+image_2 = "placeholder.png"
+image_3 = "placeholder.png" 
+image_4 = "placeholder.png"
+%}
+
+```liquid
+{% raw %}{% include image-row.html 
+image_1 = "placeholder.png" 
+image_2 = "placeholder.png"
+%}{% endraw %}
+```
+
+---
+
 ## 3. Paramètres de la Carte d’En-Tête
 
 Vous pouvez configurer plusieurs paramètres pour personnaliser l’affichage de la carte en haut de chaque page de tutoriel ou documentation. Voici une explication de chaque paramètre disponible :
