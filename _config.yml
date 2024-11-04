@@ -2,8 +2,6 @@ title: Craft The Docs
 description: Craft your docs for the MakerSpace Amiens
 theme: bulma-clean-theme
 
-url: https://github.com/Makerspace-Amiens/CraftTheDocs-V1.0
-
 force_theme: light
 permalink: pretty
 footer_menu: footer_navigation
