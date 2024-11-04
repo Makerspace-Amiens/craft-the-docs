@@ -5,8 +5,9 @@ doc_header: false
 component_toc: true
 hero_image: /assets/img/placeholder.png
 hero_darken: true
-title: Information sur le Site
+title: Information sur le site
 subtitle: Tout ce que vous devez savoir
+menubar: menu_bar
 ---
 
 ## Bienvenue sur la Page d'Information
