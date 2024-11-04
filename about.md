@@ -3,7 +3,7 @@ layout: documentation
 hide_hero: false
 doc_header: false
 component_toc: false
-hero_image: "about_project.jpg"
+hero_image: /assets/img/placeholder.png
 hero_darken: true
 title: À propos du Projet
 subtitle: Informations générales sur ce projet
