@@ -222,6 +222,24 @@ layout: default
                         </div>
                     </div>
                 {% endif %}
+
+                <!-- Panel block for hardwares -->
+                {% if page.hardwares %}
+                    <div class="panel-block">
+                        <div class="content">
+                            <p class="is-size-6 has-text-weight-semibold mb-0">Machines/Outils :</p>
+                            <ul class="mt-1">
+                                {% for hardware in page.hardwares %}
+                                    {% if hardware.link %}
+                                        <li><a href="{{ hardware.link }}" target="_blank">{{ hardware.label }}</a></li>
+                                    {% else %}
+                                        <li>{{ hardware.label }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
             
                 <!-- Panel block for progress bar (documentation completion) -->
                 {% if page.todo %}

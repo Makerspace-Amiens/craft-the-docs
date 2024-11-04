@@ -39,11 +39,15 @@ difficulty: 1
 compatibilities-os: win, mac, lin
 
 prerequisites:
-  - label: Préparation de base
+  - label: Aucun pré-requis nécessaire
     link: ""
 
 softwares: 
   - label: Aucun logiciel requis
+    link: ""
+
+hardwares: 
+  - label: Aucune machine requise
     link: ""
 
 todo: 100
@@ -103,6 +107,7 @@ Vous pouvez configurer plusieurs paramètres pour personnaliser l’affichage de
 - **compatibilities-os** : Systèmes d’exploitation compatibles (win, mac, lin).
 - **prerequisites** : Liste des prérequis avec `label` pour le nom et `link` pour le lien.
 - **softwares** : Logiciels requis pour le tutoriel, également définis par `label` et `link`.
+- **hardwares** : Machines requis pour le tutoriel, également définis par `label` et `link`.
 - **todo** : Indique le pourcentage d'avancement (de 0 à 100) pour une vue d'ensemble rapide de la progression.
 
 Ces paramètres sont flexibles et peuvent être adaptés en fonction des besoins spécifiques de chaque page.
