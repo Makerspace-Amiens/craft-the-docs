@@ -1,6 +1,6 @@
 ---
 title: Craft The Docs
-subtitle: Tempalte de site pour réaliser de la documentation
+subtitle: Template de site pour réaliser de la documentation
 layout: page
 hero_height: is-large
 hero_darken: true
