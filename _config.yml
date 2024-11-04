@@ -10,6 +10,7 @@ footer_menu: footer_navigation
 lang: fr
 theme_color: '#ef2e31'
 fixed_navbar: top
+favicon: favicon.png
 
 collections:
   docs:
