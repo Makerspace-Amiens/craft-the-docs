@@ -71,7 +71,7 @@ Vous pouvez également ajouter des sections de contenu personnalisées pour des 
 {% endraw %}
 ```
 
-
+{% include message.html title="Information" message="Ceci est un message d'information. Utilisez-le pour attirer l'attention de l'utilisateur sur un point important." status="is-info" icon="fas fa-info-circle" %}
 
 {% include message.html title="Attention" message="Ceci est un message d'avertissement. Utilisez-le pour signaler un risque ou une précaution." status="is-warning"  icon="fas fa-exclamation-triangle" %}
 
