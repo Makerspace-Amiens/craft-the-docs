@@ -65,11 +65,17 @@ Vous pouvez également ajouter des sections de contenu personnalisées pour des 
 
 ## 2. Messages d'alerte
 
-{% include message.html title="Information" message="Ceci est un message d'information. Utilisez-le pour attirer l'attention de l'utilisateur sur un point important." status="is-info" dismissable="false" icon="fas fa-info-circle" %}
+```liquid
+{% raw %}
+{% include message.html title="Information" message="Ceci est un message d'information. Utilisez-le pour attirer l'attention de l'utilisateur sur un point important." status="is-info" icon="fas fa-info-circle" %}
+{% endraw %}
+```
 
-{% include message.html title="Attention" message="Ceci est un message d'avertissement. Utilisez-le pour signaler un risque ou une précaution." status="is-warning" dismissable="false" icon="fas fa-exclamation-triangle" %}
 
-{% include message.html title="Danger" message="Ceci est un message de danger. Utilisez-le pour avertir l'utilisateur d'un risque majeur." status="is-danger" dismissable="false" icon="fas fa-exclamation-triangle" %}
+
+{% include message.html title="Attention" message="Ceci est un message d'avertissement. Utilisez-le pour signaler un risque ou une précaution." status="is-warning"  icon="fas fa-exclamation-triangle" %}
+
+{% include message.html title="Danger" message="Ceci est un message de danger. Utilisez-le pour avertir l'utilisateur d'un risque majeur." status="is-danger" icon="fas fa-exclamation-triangle" %}
 
 ---
 
