@@ -199,10 +199,60 @@ Si vous ne souhaitez pas afficher d’image d’aperçu, laissez simplement le p
 
 Cette méthode est utile pour garantir une intégration rapide et simplifiée tout en conservant une présentation visuelle cohérente pour tous les modèles 3D intégrés.
 
+---
+
+## 6. Intégration de PCB - Schémas et board avec Kicanvas
+
+Nous utilisons [**Kicanvas**](https://kicanvas.org) pour intégrer des schémas PCB et des plans de circuits imprimés dans votre documentation. 
+Kicanvas permet d'embedder des fichiers de projet KiCad (.kicad_sch pour les schémas et .kicad_pcb pour les boards) pour une visualisation interactive directement sur la page.
+
+### Méthode d'intégration directe avec Kicanvas
+
+Utilisez la balise `<kicanvas-embed>` pour intégrer vos fichiers PCB et schémas, en spécifiant le chemin du fichier source. 
+Vous pouvez ajuster les contrôles selon vos préférences en utilisant l'attribut `controls`.
+
+#### Exemple d'intégration d'un schéma
+
+```html
+<kicanvas-embed src="chemin/vers/votre-schema.kicad_sch" controls="basic">
+</kicanvas-embed>
+```
+
+- **src** : Chemin vers le fichier de schéma (.kicad_sch) ou le board (.kicad_pcb).
+- **controls** : Définissez le niveau de contrôle de l'interface (par exemple, `basic` pour des contrôles de base).
+
+<kicanvas-embed src="kicanvas-example.kicad_sch" controls="basic"></kicanvas-embed>
+
+#### Exemple d'intégration d'un board
+
+```html
+<kicanvas-embed src="chemin/vers/votre-board.kicad_pcb" controls="advanced">
+</kicanvas-embed>
+```
+
+- **src** : Chemin vers le fichier de schéma (.kicad_sch) ou le board (.kicad_pcb).
+- **controls** : Définissez le niveau de contrôle de l'interface (par exemple, `advanced` pour des contrôles avancés).
+
+<kicanvas-embed src="kicanvas-example.kicad_pcb" controls="advanced"></kicanvas-embed>
+
+### Options de contrôle pour Kicanvas
+
+- **basic** : Inclut les commandes de base pour la visualisation.
+- **advanced** : Donne accès à des contrôles avancés pour une exploration détaillée du schéma ou du board.
+
+Cette intégration permet aux utilisateurs d’explorer vos PCB et schémas de manière interactive, facilitant ainsi la compréhension des circuits.
+
+{% include message.html title="Documentation" message="Pour plus d'informations n'hésitez pas à consulter la documentation du module [**Kicanvas**](https://kicanvas.org)." status="is-info" dismissable="false" icon="fas fa-info-circle" %}
+
+### Carte PCB en 3D
+
+Pour la visualisation de la carte en 3D, vous pouvez toujours utiliser le module model-viewer vu ci-dessus.
+
+{% include 3d-model.html model="kicanvas-example.glb" poster="kicanvas-example.webp" %}
 
 ---
 
-## 6. Cartes de Collections
+## 7. Cartes de Collections
 
 Vous pouvez intégrer des cartes de collections en indiquant la collection que vous souhaitez faire apparaitre. Idéal pour renvoyer vos lecteurs vers des tutoriels similaires ou en lien.
 
