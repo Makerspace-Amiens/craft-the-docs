@@ -172,7 +172,8 @@ image="placeholder.gif" %}
 
 ## 5. Intégration de modèles 3D
 
-{% include 3d-model.html model="astronaut.glb" poster="astronaut_poster.webp" %}
+{% include 3d-model.html model="astronaut.glb" poster="astronaut_poster.webp" fullscreen_modal=true%}
+
 
 Pour intégrer des modèles 3D dans votre documentation, nous utilisons la librairie [**model-viewer**](https://modelviewer.dev). Celle-ci permet de visualiser des fichiers 3D interactifs directement dans le navigateur. Il est possible de les intégrer de deux manières : en utilisant l’API [**model-viewer**](https://modelviewer.dev/editor/) directement ou en passant par un fichier d’inclusion.
 
@@ -189,7 +190,7 @@ Pour simplifier l’intégration, vous pouvez également utiliser le fichier d�
 Utilisez cette méthode pour afficher une image de prévisualisation avant de charger le modèle.
 
 ```liquid
-{% raw %}{% include 3d-model.html model="astronaut.glb" poster="astronaut_poster.webp" %}{% endraw %}
+{% raw %}{% include 3d-model.html model="astronaut.glb" poster="astronaut_poster.webp" fullscreen_modal=true %}{% endraw %}
 ```
 
 - **model** : Chemin vers le fichier 3D (par exemple, `astronaut.glb`).
@@ -200,7 +201,7 @@ Utilisez cette méthode pour afficher une image de prévisualisation avant de ch
 Si vous ne souhaitez pas afficher d’image d’aperçu, laissez simplement le paramètre `poster` vide.
 
 ```liquid
-{% raw %}{% include 3d-model.html model="astronaut.glb" %}{% endraw %}
+{% raw %}{% include 3d-model.html model="astronaut.glb" fullscreen_modal=true %}{% endraw %}
 ```
 
 Cette méthode est utile pour garantir une intégration rapide et simplifiée tout en conservant une présentation visuelle cohérente pour tous les modèles 3D intégrés.
